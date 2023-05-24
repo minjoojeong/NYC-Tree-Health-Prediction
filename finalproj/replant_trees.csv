@@ -1,0 +1,8 @@
+tree_id,lat,lon,tree_dbh,health,spc_latin,borough,nta_name,geometry,index_right,datcolmthd,acres,parkname,iniplntsn,parknumber
+316340,40.50285966,-74.25083735,0,0,Dead,Staten Island,Charleston-Richmond Valley-Tottenville,POINT (-74.25083735 40.50285966),10.0,GPS,0.53504857,Conference House Park,2008 Spring,R006
+316339,40.50280107,-74.25113469,12,3,Ulmus,Staten Island,Charleston-Richmond Valley-Tottenville,POINT (-74.25113469 40.50280107),10.0,GPS,0.53504857,Conference House Park,2008 Spring,R006
+476334,40.85679836,-73.93854815,0,0,Dead,Manhattan,Washington Heights North,POINT (-73.93854815 40.85679836),130.0,GPS,3.28948737,Fort Washington Park,2008 Spring,M028
+476335,40.85701837,-73.93836117,0,0,Dead,Manhattan,Washington Heights North,POINT (-73.93836117 40.85701837),130.0,GPS,3.28948737,Fort Washington Park,2008 Spring,M028
+476339,40.85920298,-73.93655552,16,3,Robinia,Manhattan,Washington Heights North,POINT (-73.93655552 40.85920298),129.0,GPS,0.69844131,Fort Washington Park,2008 Spring,M028
+476340,40.85921238,-73.93654235,13,3,Robinia,Manhattan,Washington Heights North,POINT (-73.93654235 40.85921238),129.0,GPS,0.69844131,Fort Washington Park,2008 Spring,M028
+59464,40.75959363,-73.76154659,4,3,Quercus,Queens,Oakland Gardens,POINT (-73.76154659 40.75959363),274.0,GPS,0.32839998,Alley Pond Park,2011 Spring,Q001

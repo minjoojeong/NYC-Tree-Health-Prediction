@@ -1,0 +1,52 @@
+import pandas as pd
+import json
+import numpy as np
+from sodapy import Socrata
+"""
+2015 Street Tree Census
+https://data.cityofnewyork.us/resource/uvpi-gqnh.json
+"""
+
+def tree2015():
+"""
+2015 trees
+return df
+"""
+    # Unauthenticated client only works with public data sets. Note 'None'
+    # in place of application token, and no username or password:
+    client = Socrata("data.cityofnewyork.us", None)
+    data = client.get("uvpi-gqnh", limit=700000)
+    #data = client.get("uvpi-gqnh", limit=1200)
+    key_dict = ['tree_id','latitude','longitude'\
+                       ,'tree_dbh','status','health',\
+                       'spc_latin','borough','nta_name']
+    for item in data:
+        for k,v in list(item.items()):
+            if k not in key_dict:
+                del item[k]
+    #clean JSON            
+    for item in data:
+        for key, value in item.items():
+            if key == 'spc_latin':
+                new_v = value.split()
+                genus = new_v[0]
+                item[key] = genus
+    print(data[0]) #print json object
+    json_obj = json.dumps(data)
+
+    #Trees 2015 Health Data
+    import pandas as pd
+    import numpy as np
+    treedf = pd.read_json(json_obj)
+    tree2015 = treedf #the cleaned forestry json
+    tree2015['health'] = tree2015['health'].fillna('Dead')
+    tree2015['tpcondition'] = tree2015['health']
+    tree2015['health'] = tree2015['health']
+    dictionary = {'Excellent':3,'Good':3,'Fair':2,'Poor':1,'Dead':0}
+    tree2015 = tree2015.replace({'health':dictionary})
+    tree2015['spc_latin'] = tree2015['spc_latin'].fillna('Dead')
+    tree2015 = tree2015.drop(columns = ['status'])
+    return tree2015
+tree2015.info()
+tree2015.head()
+#tree_df            
